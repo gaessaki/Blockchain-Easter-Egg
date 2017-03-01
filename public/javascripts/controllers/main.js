@@ -8,14 +8,32 @@ angular.module('bc-easter-egg')
             prev: '0000000000000000000000000000000000000000000000000000000000000000',
             hash: 'hash would be here'
         }
+
+        $scope.b2 = {
+            num: 2,
+            nonce: 83694,
+            data: 'test data',
+            prev: '0000000000000000000000000000000000000000000000000000000000000000',
+            hash: ''
+        }
+
+        $scope.b3 = {
+            num: 3,
+            nonce: 24932,
+            data: 'test data',
+            prev: '0000000000000000000000000000000000000000000000000000000000000000',
+            hash: 'hash would be here'
+        }
         
         hash = function(block) {
             var sha256 = new jsSHA("SHA-256", "TEXT");
             sha256.update(block.num + block.nonce + block.data + block.prev);
             return sha256.getHash("HEX");
         }
-        $scope.update = function(block) {
-            console.log(block);
-            block.hash = hash(block);
+        $scope.update = function() {
+            $scope.b1.hash = hash($scope.b1);
+            $scope.b2.hash = hash($scope.b2);
+            $scope.b3.hash = hash($scope.b3);
+            $scope.b3.prev = $scope.b2.hash;
         }
     });
