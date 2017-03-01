@@ -14,9 +14,12 @@ angular.module('bc-easter-egg')
             sha256.update(block.num + block.nonce + block.data + block.prev);
             return sha256.getHash("HEX");
         }
-        $scope.update = function (block) {
-            console.log(block);
-            block.hash = hash(block);
+
+        $scope.update = function() {
+            $scope.b1.hash = hash($scope.b1);
+            $scope.b2.hash = hash($scope.b2);
+            $scope.b3.hash = hash($scope.b3);
+            $scope.b3.prev = $scope.b2.hash;
         }
     });
 
