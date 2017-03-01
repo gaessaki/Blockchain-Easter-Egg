@@ -6,7 +6,7 @@ angular.module('bc-easter-egg', ['ui.router'])
         $stateProvider
             .state('main', {
                 url: '/',
-                templateUrl: '/views/main.html',
+                templateUrl: '/views/c2.html',
                 controller: 'mainController'
             });
     });
