@@ -5,14 +5,17 @@ angular.module('bc-easter-egg')
             num: 1,
             nonce: 42252,
             data: 'test data',
-            prev: 'prevhash',
+            prev: '0000000000000000000000000000000000000000000000000000000000000000',
             hash: 'hash would be here'
         }
         
-        $scope.hash = function(block) {
-            return sjcl.hash.sha256(block.num + block.nonce + block.data + block.prev);
+        hash = function(block) {
+            var sha256 = new jsSHA("SHA-256", "TEXT");
+            sha256.update(block.num + block.nonce + block.data + block.prev);
+            return sha256.getHash("HEX");
         }
         $scope.update = function(block) {
+            console.log(block);
             block.hash = hash(block);
         }
     });
