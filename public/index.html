@@ -1,35 +1,119 @@
 <!doctype html>
 
 <html ng-app="bc-easter-egg">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>??????</title>
-        
-        <link rel="stylesheet" href="./stylesheets/style.css" />
-        <link href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" rel="stylesheet"> 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <script src="//d3js.org/d3.v3.min.js"></script>
-        <script src="//d3js.org/topojson.v2.min.js"></script>
-        <script src="javascripts/libs/planetary.min.js"></script>
-        <script src="javascripts/glober.js" defer></script>
-       
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
-        <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <title>??????</title>
 
-        <script src="javascripts/core.js"></script>
-        
-        <script src="javascripts/controllers/main.js"></script>
+    <link rel="stylesheet" href="./stylesheets/style.css" />
+    <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css">
+    <link rel="stylesheet" href="./stylesheets/fa-animation.css">
 
-    </head>
-    <body>
-        <canvas id="rotatingGlobe" width="500" height="500"></canvas>
-        <div class="container">
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="//d3js.org/topojson.v2.min.js"></script>
+    <script src="javascripts/libs/planetary.min.js"></script>
+    <script src="javascripts/glober.js" defer></script>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <script src="javascripts/core.js"></script>
+    <script src="javascripts/controllers/main.js"></script>
+
+</head>
+
+<body>
+    <!-- Besoin d'aide? Regardez ici: https://anders.com/blockchain/. :) -->
+    <canvas id="rotatingGlobe" width="400px" height="400px"></canvas>
+    <div class="container">
+        <div class="main-panel">
             <h1>test</h1>
+            <div class="bc-c2">
+                <div id="bc1" class="bc-well">
+                    <form>
+                        <div class="form-group">
+                            <label for="bc1num">Block:</label>
+                            <span class="form-static-text">#</span>
+                            <input id="bc1num" type="text" value="1" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="bc1nonce">Nonce:</label>
+                            <input id="bc1nonce" type="text" value="" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="bc1data">Data:</label>
+                            <textarea id="bc1data" rows="8"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="bc1prevhash">Précédent:</label>
+                            <input id="bc1prevhash" type="text" value="" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="bc1hash">Hash:</label>
+                            <input id="bc1hash" type="text" value="" readonly>
+                        </div>
+                    </form>
+                </div>
+                <div id="bc2" class="bc-well">
+                    <form>
+                        <div class="form-group">
+                            <label for="bc2num">Block:</label>
+                            <span class="form-static-text">#</span>
+                            <input id="bc2num" type="text" value="2" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="bc2nonce">Nonce:</label>
+                            <input id="bc2nonce" type="text" value="" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="bc2data">Data:</label>
+                            <textarea id="bc2data" rows="8"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="bc2prevhash">Précédent:</label>
+                            <input id="bc2prevhash" type="text" value="" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="bc2hash">Hash:</label>
+                            <input id="bc2hash" type="text" value="" readonly>
+                        </div>
+                    </form>
+                </div>
+                <div id="bc3" class="bc-well">
+                    <form>
+                        <div class="form-group">
+                            <label for="bc3num">Block:</label>
+                            <span class="form-static-text">#</span>
+                            <input id="bc3num" type="text" value="3" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="bc3nonce">Nonce:</label>
+                            <input id="bc3nonce" type="text" value="" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="bc3data">Data:</label>
+                            <textarea id="bc3data" rows="8"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="bc3prevhash">Précédent:</label>
+                            <input id="bc3prevhash" type="text" value="" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="bc3hash">Hash:</label>
+                            <input id="bc3hash" type="text" value="" readonly>
+                        </div>
+                    </form>
+                </div>
+            </div>
             <div class="help-slide-up">
-                <a class="chev" href="#"><i class="fa fa-chevron-down" aria-hidden="true"></i>
+                <a class="chev" href="#"><i class="fa fa-chevron-down faa-float animated" aria-hidden="true"></i></a>
             </div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>

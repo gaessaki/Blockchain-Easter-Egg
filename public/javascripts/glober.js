@@ -1,36 +1,17 @@
 (function() {
   var globe = planetaryjs.planet();
-  globe.loadPlugin(autorotate(10));
+  globe.loadPlugin(autorotate(5));
   globe.loadPlugin(planetaryjs.plugins.earth({
     topojson: { file:   '/world-110m-withlakes.json' },
     oceans:   { fill:   '#FFFFFF' },
     land:     { fill:   '#FFFFFF' },
-    borders:  { stroke: '#007944', lineWidth: 0.35, type: 'both' }
+    borders:  { stroke: '#007944', lineWidth: 0.45, type: 'both' }
   }));
   globe.loadPlugin(lakes({
-    fill: '#000080'
+    fill: '#FFFFFF'
   }));
-  globe.loadPlugin(planetaryjs.plugins.pings());
-  globe.loadPlugin(planetaryjs.plugins.zoom({
-    scaleExtent: [100, 300]
-  }));
-  globe.loadPlugin(planetaryjs.plugins.drag({
-    onDragStart: function() {
-      this.plugins.autorotate.pause();
-    },
-    onDragEnd: function() {
-      this.plugins.autorotate.resume();
-    }
-  }));
-  globe.projection.scale(175).translate([175, 175]).rotate([0, -10, 0]);
-
-  var colors = ['red', 'yellow', 'white', 'orange', 'green', 'cyan', 'pink'];
-  setInterval(function() {
-    var lat = Math.random() * 170 - 85;
-    var lng = Math.random() * 360 - 180;
-    var color = colors[Math.floor(Math.random() * colors.length)];
-    globe.plugins.pings.add(lng, lat, { color: color, ttl: 2000, angle: Math.random() * 10 });
-  }, 150);
+  globe.loadPlugin(planetBorder());
+  globe.projection.scale(175).translate([175, 175]).rotate([70, -40, 25]);
 
   var canvas = document.getElementById('rotatingGlobe');
   if (window.devicePixelRatio == 2) {
@@ -80,9 +61,28 @@
           context.beginPath();
           planet.path.context(context)(lakes);
           context.fillStyle = options.fill || 'black';
+          context.strokeStyle = '#007944';
+          context.lineWidth = 0.45;
           context.fill();
+          context.stroke();
         });
       });
     };
   };
+
+  function planetBorder() {
+
+    return function(planet) {
+      planet.onDraw(function() {
+         planet.withSavedContext(function(context) {
+          context.beginPath();
+          planet.path.context(context)({type: 'Sphere'});
+
+          context.strokeStyle = '#007944';
+          context.lineWidth = 0.4;
+          context.stroke();
+        });
+      });
+    }
+  }
 })();

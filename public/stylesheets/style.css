@@ -1,3 +1,6 @@
+html {
+  overflow: auto;
+}
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
@@ -5,23 +8,47 @@ body {
 a {
   color: #00b7ff;
 }
-.container {
-  padding: 50px;
-  margin: 8px;
+.bc-c2 {
   display: flex;
+  flex-direction: row;
+}
+.bc-well {
+  flex-grow: 1;
+}
+.container {
+  height: 100%;
+  width: 100%;
+}
+.form-group {
+  margin: 15px;
 }
 .help-slide-up {
   margin: auto;
+  margin-bottom: 10px;
+}
+.main-panel {
+  height: calc(100vh - 150px);
+  margin: 75px;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(128,128,128,0.3);
+}
+textarea {
+  vertical-align: top;
 }
 .chev {
   box-sizing: border-box;
   color: #fff;
-  font-size: 16px;
+  font-size: 30px;
   text-shadow: 1px 1px 1px #666;
 }
 #rotatingGlobe {
-  width: 500px;
-  height: 500px;
-  margin-left: -100px;
-  margin-top: -100px;
+  width: 650px;
+  height: 650px;
+  margin-left: -12%;
+  margin-top: -6.5%;
+  position: absolute;
+  z-index: -1;
 }
