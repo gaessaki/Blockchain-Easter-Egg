@@ -3,11 +3,11 @@
         <h1>test</h1>
         <div class="bc-c2">
             <div id="bc1" class="bc-well">
-                <form>
+                <form class="bc-form">
                     <div class="form-group">
                         <label for="bc1num">Block:</label>
-                        <!--<span class="form-static-text">#</span>-->
-                        <input id="bc1num" type="text" ng-model="b1.num" readonly>
+                        <span class="form-static-text">#</span>
+                        <input class="bcnum" id="bc1num" type="text" ng-model="b1.num" readonly>
                     </div>
                     <div class="form-group">
                         <label for="bc1nonce">Nonce:</label>
@@ -29,11 +29,11 @@
             </div>
             <div class="bc-vertical-line"></div>
             <div id="bc2" class="bc-well">
-                <form>
+                <form class="bc-form">
                     <div class="form-group">
                         <label for="bc2num">Block:</label>
-                        <!--<span class="form-static-text">#</span>-->
-                        <input id="bc2num" type="text" value="2" readonly>
+                        <span class="form-static-text">#</span>
+                        <input class="bcnum" id="bc2num" type="text" value="2" readonly>
                     </div>
                     <div class="form-group">
                         <label for="bc2nonce">Nonce:</label>
@@ -55,11 +55,11 @@
             </div>
             <div class="bc-vertical-line"></div>
             <div id="bc3" class="bc-well">
-                <form>
+                <form class="bc-form">
                     <div class="form-group">
                         <label for="bc3num">Block:</label>
-                        <!--<span class="form-static-text">#</span>-->
-                        <input id="bc3num" type="text" value="3" readonly>
+                        <span class="form-static-text">#</span>
+                        <input class="bcnum" id="bc3num" type="text" value="3" readonly>
                     </div>
                     <div class="form-group">
                         <label for="bc3nonce">Nonce:</label>
@@ -80,8 +80,14 @@
                 </form>
             </div>
         </div>
-        <div class="help-slide-up">
-            <a class="chev" href="#"><i class="fa fa-chevron-down faa-float animated" aria-hidden="true"></i></a>
+        <a class="chev" href="#"><i class="fa fa-chevron-down faa-float animated" id="bc-chevron" onclick="showHelp();" aria-hidden="true"></i></a>
+        <div class="help-slide-up help-slide-hide" id="help-slide">
+            <div class="help-slide-modal bc-modal-hide">
+                <form class="bc-help-form">
+                    <label for="bc-email">Please enter your email</label>
+                    <input type="email" id="bd-email">
+                </form>
+            </div>
         </div>
     </div>
 </div>

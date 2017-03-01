@@ -23,13 +23,25 @@ a {
   width: 100%;
 }
 .form-group {
-  margin: 15px;
+  margin: 8px 0;
 }
 .help-slide-up {
-  margin: auto;
-  margin-bottom: 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  transition: all 400ms ease-in-out;
+}
+.help-slide-up.help-slide-hide{
+  bottom: -97px;
+  display: none;
+}
+.help-slide-up.help-slide-show {
+  bottom: 0px;
+  display: block;
 }
 .main-panel {
+  position: relative;
   height: calc(100vh - 150px);
   margin: 75px;
   padding-left: 50px;
@@ -46,6 +58,10 @@ textarea {
   color: #fff;
   font-size: 30px;
   text-shadow: 1px 1px 1px #666;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 #rotatingGlobe {
   width: 650px;
@@ -58,32 +74,66 @@ textarea {
 .bc-vertical-line{
   border-right: 3px solid #fff;
 }
-form {
+.bc-form {
   padding: 20px;
   display: flex;
   flex-direction: column;
 }
-form .form-group {
+.bc-form .form-group {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-form .form-group label{
+.bc-form .form-group label{
   width: 100%;
   font-size: 1.2em;
   font-weight: 600;
 }
-form .form-group input, form .form-group textarea{
+
+.bc-form .form-group input, .bc-form .form-group textarea{
   width: 200%;
+  padding: 7px 10px;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+}
+.bc-form .form-group input.bcnum{
+  width: calc(200px - 30px);
+  padding-left: 30px;
+}
+.bc-form input[readonly]{
+  background-color: rgb(229, 229, 153);
+  cursor: not-allowed;
+}
+.bc-form .bc-data-label{
+  align-self: flex-start;
+  margin-top: 6px;
+}
+.help-slide-modal{
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 30px;
+  transition: all 300ms ease-in-out;
+}
+.help-slide-modal.bc-modal-hide{
+  opacity: 1;
+}
+.help-slide-modal.bc-modal-show{
+  opacity: 1;
+}
+.bc-help-form label{
+  margin-right: 10px;
+}
+.bc-help-form input{
   padding: 10px 16px;
   border-radius: 4px;
   border: 1px solid #ddd;
 }
-form input[readonly]{
-  background-color: rgba(255, 255, 0, 0.3);
-  cursor: not-allowed;
-}
-form .bc-data-label{
-  align-self: flex-start;
-  margin-top: 6px;
+.form-static-text{
+  margin-right: -26px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-right: 1px solid #ddd;
+  z-index: 2;
+  background-color: #fff;
+  padding: 6px 8px;
 }
