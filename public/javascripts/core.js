@@ -1,4 +1,4 @@
-angular.module('bc-easter-egg', ['ui.router'])
+angular.module('bc-easter-egg', ['ui.router', 'ngResource'])
     .config(function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/');

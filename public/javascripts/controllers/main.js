@@ -56,8 +56,6 @@ angular.module('bc-easter-egg')
             }
         }
 
-                console.log(hash($scope.b3));
-
         $scope.update = function () {
             $scope.b1.hash = hash($scope.b1);
             $scope.b2.hash = hash($scope.b2);
