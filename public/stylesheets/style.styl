@@ -1,50 +1,142 @@
-html
+html 
   overflow auto
-body
-  font 14px "Lucida Grande", Helvetica, Arial, sans-serif
+body 
+  font 14px Consolas, Arial//"Lucida Grande", Helvetica, Arial, sans-serif
   margin 0
-a
-  color #00B7FF
+a 
+  color #00b7ff
+label
+  text-align right
+  padding-right 10px
+  color #008c53
+h1
+  font-weight 400
 
-//divs
-.bc-c2
+.bc-c2 
   display flex
   flex-direction row
-.bc-well
-  flex-grow 1
-.container
+  width 100%
+  justify-content space-between
+
+.bc-well 
+  width 100%
+  max-width 450px
+
+.container 
   height 100%
   width 100%
-.form-group
-  margin 15px
-.help-slide-up
-  margin auto
-  margin-bottom 10px
-.main-panel
+
+.form-group 
+  margin 8px 0
+
+.help-slide-up 
+  position absolute
+  left 0
+  right 0
+  text-align center
+  transition all 400ms ease-in-out
+
+.help-slide-up.help-slide-hide
+  bottom -97px
+  display none
+
+.help-slide-up.help-slide-show 
+  bottom 0px
+  display block
+
+.main-panel 
+  position relative
   height calc(100vh - 150px)
   margin 75px
   padding-left 50px
   padding-right 50px
   display flex
   flex-direction column
-  background-color rgba(128, 128, 128, 0.3)
+  background-color rgba(128,128,128,0.3)
 
-//inputs
-textarea
+textarea 
   vertical-align top
 
-//buttons
-.chev
+.chev 
   box-sizing border-box
-  color rgb(255, 255, 255)
+  color #008c53
   font-size 30px
-  text-shadow: 1px 1px 1px #666666
+  text-shadow 1px 1px 1px #666
+  position absolute
+  bottom 0
+  left 50%
+  transform translateX(-50%)
 
-//elements
-#rotatingGlobe
+#rotatingGlobe 
   width 650px
   height 650px
   margin-left -12%
   margin-top -6.5%
   position absolute
   z-index -1
+
+.bc-vertical-line
+  border-right 3px solid #fff
+
+.bc-form 
+  padding 20px
+  display flex
+  flex-direction column
+
+.bc-form .form-group 
+  display flex
+  justify-content space-between
+  align-items center
+
+.bc-form .form-group label
+  width 100%
+  font-size 1.2em
+  font-weight 300
+
+
+.bc-form .form-group input, .bc-form .form-group textarea
+  width 200%
+  padding 7px 10px
+  border-radius 4px
+  border 1px solid #aaa
+
+.bc-form .form-group input.bcnum
+  width 183%
+  padding-left 30px
+
+.bc-form input[readonly], .bc-form textarea[readonly]
+  background-color rgb(229, 229, 153)
+  cursor not-allowed
+
+.bc-form .bc-data-label
+  align-self flex-start
+  margin-top 6px
+
+.help-slide-modal
+  box-sizing border-box
+  background-color #fff
+  padding 30px
+  transition all 300ms ease-in-out
+
+.help-slide-modal.bc-modal-hide
+  opacity 1
+
+.help-slide-modal.bc-modal-show
+  opacity 1
+
+.bc-help-form label
+  margin-right 10px
+
+.bc-help-form input
+  padding 10px 16px
+  border-radius 4px
+  border 1px solid #ddd
+
+.form-static-text
+  margin-right -26px
+  border-top-left-radius 4px
+  border-bottom-left-radius 4px
+  border-right 1px solid #ddd
+  z-index 2
+  background-color #fff
+  padding 5.5px 7.75px 7.5px 8.5px
